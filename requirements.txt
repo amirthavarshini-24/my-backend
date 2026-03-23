@@ -4,3 +4,4 @@ pydantic
 scikit-learn
 numpy
 pandas      
+deep-translator
