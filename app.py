@@ -25,19 +25,24 @@ app.add_middleware(
 # Load ML Models
 # -------------------------
 
-toxic_model = joblib.load("toxic_model.pkl")
-emotion_model = joblib.load("emotion_model.pkl")
-multilingual_model = joblib.load("multilingual_model.pkl")
-behaviour_model = joblib.load("behaviour_model.pkl")
+# -------------------------
+# Load ML Models
+# -------------------------
 
-rewrite_model = joblib.load("rewrite_model.pkl")
-coach_model = joblib.load("coach_model.pkl")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+toxic_model = joblib.load(os.path.join(BASE_DIR, "toxic_model.pkl"))
+emotion_model = joblib.load(os.path.join(BASE_DIR, "emotion_model.pkl"))
+multilingual_model = joblib.load(os.path.join(BASE_DIR, "multilingual_model.pkl"))
+behaviour_model = joblib.load(os.path.join(BASE_DIR, "behaviour_model.pkl"))
+
+rewrite_model = joblib.load(os.path.join(BASE_DIR, "rewrite_model.pkl"))
+coach_model = joblib.load(os.path.join(BASE_DIR, "coach_model.pkl"))
 
 # -------------------------
 # Load Dataset
 # -------------------------
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 coach_dataset = pd.read_csv(
     os.path.join(BASE_DIR, "datasets", "coach_dataset.csv")
