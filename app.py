@@ -95,6 +95,7 @@ def translate_to_english(text):
 
 @app.post("/analyze")
 def analyze(comment: Comment):
+    history.clear()
 
     original = comment.text
     translated = translate_to_english(original)
